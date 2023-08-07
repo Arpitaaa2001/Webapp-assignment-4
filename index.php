@@ -27,7 +27,6 @@
                 $city = $data->city->name;
                 $country = $data->city->country;
 
-                // Group the forecast data by date
                 $grouped_data = [];
                 foreach ($data->list as $forecast) {
                     $date = date('Y-m-d', $forecast->dt);
@@ -37,7 +36,7 @@
                 <div class="weather-data">
                     <?php
                     foreach ($grouped_data as $date => $daily_forecasts) {
-                        $first_forecast = $daily_forecasts[0]; // Get the first forecast of the day
+                        $first_forecast = $daily_forecasts[0]; 
                         $icon = $first_forecast->weather[0]->icon;
                         $description = $first_forecast->weather[0]->description;
                         $temp = $first_forecast->main->temp;
